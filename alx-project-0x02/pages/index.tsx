@@ -1,12 +1,14 @@
+import Header from "@/components/layout/Header";
 import React from "react";
 
-const Home = () => {
+const LandingPage = () => {
   return (
-    <div>
+    <>
+      <Header />
       <h1>Welcome to our application!</h1>
-      <p>This is the home page.</p>
-    </div>
+      <p>This is the Landing page.</p>
+    </>
   );
 };
 
-export default Home;
+export default LandingPage;
