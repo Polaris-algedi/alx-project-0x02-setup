@@ -1,9 +1,11 @@
 import Card from "@/components/common/Card";
+import { CardProps } from "@/interfaces";
+import PostModal from "@/components/common/PostModal";
 import Header from "@/components/layout/Header";
-import { title } from "process";
+import { useState } from "react";
 
 export default function Home() {
-  const cards = [
+  const [cards, setCards] = useState([
     {
       title: "Secret of friendship",
       content:
@@ -19,14 +21,25 @@ export default function Home() {
       content:
         "The new friend arrived with a warm smile and open heart, bringing fresh laughter and stories to the group. In just a few days, their kindness and genuine curiosity made them feel like they had always been part of the circle. A new chapter of friendship had begun.",
     },
-  ];
+  ]);
+
+  function getData(card: CardProps) {
+    console.log("This is home", card);
+    setCards((pervData) => [
+      ...pervData,
+      { title: card.title, content: card.content },
+    ]);
+  }
+
   return (
     <>
       <Header />
-      {cards.map((card) => (
-        <Card key={card.title} title={card.title} content={card.content} />
+      <PostModal onSubmit={getData} />
+      <h1>This is Home</h1>
+      <br />
+      {cards.map((card, index) => (
+        <Card key={index} title={card.title} content={card.content} />
       ))}
-      <h1>Home</h1>
     </>
   );
 }
