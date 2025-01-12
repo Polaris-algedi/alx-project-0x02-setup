@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from 'react-router-dom';
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -7,18 +7,16 @@ const Header = () => {
       <nav>
         <ul className="flex gap-1 justify-end ">
           <li>
-            {/* <Link to="/home">Home</Link> */}
-            <a href="/home">Home</a>
+            <Link href="/home">Home</Link>
           </li>
           <li>
-            {/* <Link to="/about">About</Link> */}
-            <a href="/about">About</a>
+            <Link href="/about">About</Link>
           </li>
           <li>
-            <a href="/posts">Posts</a>
+            <Link href="/posts">Posts</Link>
           </li>
           <li>
-            <a href="/users">Users</a>
+            <Link href="/users">Users</Link>
           </li>
         </ul>
       </nav>
